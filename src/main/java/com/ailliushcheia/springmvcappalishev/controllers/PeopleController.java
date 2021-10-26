@@ -42,8 +42,6 @@ public class PeopleController {
     @PostMapping()
     public String create(@ModelAttribute("person") @Valid Person person,
                          BindingResult bindingResult){
-        System.out.println(person);
-        System.out.println("bindingResult.hasErrors() = " + bindingResult.hasErrors());
         if(bindingResult.hasErrors()){
             return "people/new";
         }
